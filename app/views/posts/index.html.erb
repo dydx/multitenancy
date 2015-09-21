@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Posts</h1>
-<nav>
-  <ul>
-  </ul>
-</nav>
-
 <table>
   <tr>
     <td>Date</td>
@@ -19,7 +14,7 @@
 <% end %>
 </table>
 
-<% if signed_in? %>
+<% if signed_in? && current_user.id == @account.user_id %>
   <%= link_to "New Post", new_post_path %>
 <% end %>
 <%= link_to "Home", root_url(:subdomain => 'www') %>
