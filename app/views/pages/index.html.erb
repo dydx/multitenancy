@@ -2,6 +2,7 @@
 <ul>
 <% @accounts.each do |account| %>
   <li><%= link_to account.subdomain, "http://#{account.subdomain}.lvh.me:3000" %></li>
+  <p>Contributors</p>
 <% end %>
 
 </ul>

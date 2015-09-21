@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :account
+  has_many :posts
   accepts_nested_attributes_for :account
 
   after_initialize :set_account
