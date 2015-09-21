@@ -1,8 +1,8 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
-
+<h1>List of Blogs</h1>
 <ul>
 <% @accounts.each do |account| %>
   <li><%= link_to account.subdomain, "http://#{account.subdomain}.lvh.me:3000" %></li>
 <% end %>
+
 </ul>
+
