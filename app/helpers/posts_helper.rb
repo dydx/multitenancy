@@ -1,7 +1,7 @@
 module PostsHelper
 
   def can_edit?
-    signed_in? && current_user.id == @post.account.user_id
+    signed_in? && current_user.id == @post.user_id
   end
 
   def belongs_to_tenant?
