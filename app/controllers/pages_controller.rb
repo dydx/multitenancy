@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @accounts = Account.all
-    @posts = Post.all
+    @accounts = Account.select(:subdomain).distinct
   end
 end

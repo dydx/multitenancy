@@ -6,7 +6,7 @@
   <%= @post.body %>
 </p>
 
-<% if signed_in? && current_user.id == @post.account.user_id %>
+<% if can_edit? %>
   <%= link_to 'Edit', edit_post_path(@post) %>
 <% end %>
 <%= link_to 'Back', posts_path %>
