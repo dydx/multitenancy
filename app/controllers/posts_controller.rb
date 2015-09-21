@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = @account.posts.new
+    @post.user = current_user
   end
 
   # GET /posts/1/edit
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = @account.posts.new(post_params)
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save

@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Posts</h1>
-<nav>
-  <ul>
-  </ul>
-</nav>
-
 <table>
   <tr>
     <td>Date</td>
     <td>Title</td>
+    <td>Author</td>
   </tr>
   <% @posts.each do |post| %>
   <tr>
     <td><%= post.created_at.strftime("%d %b. %Y") %></td>
     <td><%= link_to post.title, post_path(post) %></td>
+    <td><%= post.author %></td>
+
   </tr>
 <% end %>
 </table>
 
-<%= link_to "New Post", new_post_path %>
+<% if belongs_to_tenant? %>
+  <%= link_to "New Post", new_post_path %>
+<% end %>
 <%= link_to "Home", root_url(:subdomain => 'www') %>

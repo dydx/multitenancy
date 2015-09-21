@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
   constraints SubdomainConstraint do
     resources :posts, :path => ''
-    # get '/', :to => 'posts#index'
   end
 
   root :to => 'pages#index'

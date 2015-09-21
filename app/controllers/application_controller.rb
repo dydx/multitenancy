@@ -20,5 +20,9 @@ class ApplicationController < ActionController::Base
     }
   end
 
+  def current_user_is_admin?
+    current_user.id == @account.user_id
+  end
+
 
 end
